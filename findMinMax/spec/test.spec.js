@@ -55,7 +55,21 @@ const findMinMax = require('../app.js').findMinMax;
 				      expect(findMinMax([0.5, 1.5, 2, 3, 3.5])).toEqual([0.5, 3.5]);
 				    });
 
-			  });
+			  	});
+
+			  	describe('should return in the case of extreme values', function () {
+
+				    it('should return [-Infinity, Infinity]  for [1, 4, 6, -Infinity, Infinity]', function () {
+				      expect(findMinMax([1, 4, 6, -Infinity, Infinity])).toEqual([-Infinity, Infinity]);
+				    });
+
+				    it('should return [-Infinity]  for [-Infinity, -Infinity, -Infinity]', function () {
+				      expect(findMinMax([-Infinity, -Infinity, -Infinity])).toContain(-Infinity);
+				    });
+
+				});
+
+
 
 		});
 
