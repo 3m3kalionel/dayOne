@@ -70,7 +70,6 @@ const findMinMax = require('../app.js').findMinMax;
 				});
 
 
-
 		});
 
 
