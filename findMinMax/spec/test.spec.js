@@ -45,6 +45,18 @@ const findMinMax = require('../app.js').findMinMax;
 
     			});
 
+    			describe('Cater for decimals', function () {
+
+				    it('should return [0.5] for [0.5, 0.5, 0.5]', function () {
+				      expect(findMinMax([0.5, 0.5, 0.5])).toEqual([0.5]);
+				    });
+
+				    it('should return [0.5, 3.5] for [0.5, 1.5, 2, 3, 3.5]', function () {
+				      expect(findMinMax([0.5, 1.5, 2, 3, 3.5])).toEqual([0.5, 3.5]);
+				    });
+
+			  });
+
 		});
 
 
